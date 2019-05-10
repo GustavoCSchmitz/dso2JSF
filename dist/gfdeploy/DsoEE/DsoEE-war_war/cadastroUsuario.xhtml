@@ -25,8 +25,8 @@
             <p>Telefone</p>
             <p><p:inputText label="Telefone:" value="#{usuarioMBean.usuario.telefone}" /></p>
             <p>E-mail</p>
-            <p><p:inputText label="E-mail:" value="#{usuarioMBean.cliente.email}" /></p>
-            <p><p:commandButton value="Cadastrar" id="cadastrar" action="#{UsuarioMBean.cadastrarUsuario()}" styleClass="ui-priority-primary" /></p>
+            <p><p:inputText label="E-mail:" value="#{usuarioMBean.usuario.email}" /></p>
+            <p><p:commandButton value="Cadastrar" id="cadastrar" action="#{usuarioMBean.cadastrarUsuario()}" styleClass="ui-priority-primary" /></p>
         </h:form> 
     </h:body>
 </html>

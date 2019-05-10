@@ -30,7 +30,7 @@ public class UsuarioFachada {
 
     // Metodo que retorna a lista de clientes armazenada na tabela Clientes
     public List<Entidades.Usuario> getListaUsuarios() {
-        Query query = em.createNamedQuery("ususario.findAll");
+        Query query = em.createNamedQuery("usuario.findAll");
         return query.getResultList();
     }
     
@@ -56,7 +56,7 @@ public class UsuarioFachada {
     public List getListaUsuariosPorUF(String uf) {
         if (uf == null || uf.equals("")) 
             return getListaUsuarios();
-        Query query = em.createNamedQuery("Usuario.findByUf");
+        Query query = em.createNamedQuery("usuario.findByUf");
         query.setParameter("uf", uf);
         return query.getResultList();
     }
