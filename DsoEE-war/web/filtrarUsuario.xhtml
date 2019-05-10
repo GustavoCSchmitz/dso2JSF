@@ -1,0 +1,38 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+   <p>Estado: 
+   <p:selectOneMenu label="uf" value="#{usuarioMBean.filtroUf}" >
+       <f:selectItem itemLabel="Todos" itemValue="" />
+       <f:selectItem itemLabel="Paraná" itemValue="PR" />
+       <f:selectItem itemLabel="Santa Catarina" itemValue="SC" />
+       <f:selectItem itemLabel="Rio Grande do Sul" itemValue="RS" />
+    </p:selectOneMenu></p>
+    <p><p:commandButton value="Filtrar" action="#{usuarioMBean.filtrarUsuarios()}" ajax="false" style="ui-priority-primary" /> </p>           
+    <p />
+</h:form>
+<f:view>
+  <h:form>
+     <p:dataTable var="cliente" value="#{usuarioMBean.listaUsuariosPorUF}">
+         <p:column headerText="Id">
+             <h:outputText value="#{usuario.id}" />
+         </p:column>
+         <p:column headerText="Nome">
+             <h:outputText value="#{usuario.nome}" /> 
+         </p:column>
+         <p:column headerText="E-mail">
+             <h:outputText value="#{usuario.email}" />
+         </p:column>
+      </p:dataTable>
+  </h:form>
+    </h:body>
+</html>
+

@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <h:form>
+            <h1>Editar usuario:</h1>
+            <p>Id</p>
+            <p><p:inputText title="id" value="#{usuarioMBean.usuario.id}" /></p>
+            <p>Nome</p>
+            <p><p:inputText title="nome" value="#{usuarioMBean.usuario.nome}" /></p>
+            <p>Endereço</p>
+            <p> <p:inputText label="endereco" value="#{usuarioMBean.usuario.endereco}" /></p>
+            <p>Cidade</p>
+            <p><p:inputText label="cidade" value="#{usuarioMBean.usuario.cidade}" /></p>
+            <p>Estado</p>
+            <p><p:selectOneMenu label="uf" value="#{usuarioMBean.usuario.uf}" >
+                <f:selectItem itemLabel="Paraná" itemValue="PR" />
+                <f:selectItem itemLabel="Santa Catarina" itemValue="SC" />
+                <f:selectItem itemLabel="Rio Grande do Sul" itemValue="RS" />
+                </p:selectOneMenu></p>
+            <p>Telefone</p>
+            <p><p:inputText label="Telefone:" value="#{usuarioMBean.usuario.telefone}" /></p>
+            <p>E-mail</p>
+            <p><p:inputText label="E-mail:" value="#{usuarioMBean.usuario.email}" /></p>
+            <p><p:commandButton value="Salvar" id="cadastrar" action="#{usuarioMBean.salvarUsuario()}" styleClass="ui-priority-primary" /></p>
+        </h:form>
+    </h:body>
+</html>
+
