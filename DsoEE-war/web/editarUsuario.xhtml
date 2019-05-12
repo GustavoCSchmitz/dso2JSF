@@ -8,8 +8,9 @@
         <title>Facelet Title</title>
     </h:head>
     <h:body>
+        <center>
         <h:form>
-            <h1>Editar usuario:</h1>
+            <h1>Editar cliente:</h1>
             <p>Id</p>
             <p><p:inputText title="id" value="#{usuarioMBean.usuario.id}" /></p>
             <p>Nome</p>
@@ -30,6 +31,7 @@
             <p><p:inputText label="E-mail:" value="#{usuarioMBean.usuario.email}" /></p>
             <p><p:commandButton value="Salvar" id="cadastrar" action="#{usuarioMBean.salvarUsuario()}" styleClass="ui-priority-primary" /></p>
         </h:form>
+        </center>
     </h:body>
 </html>
 

@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import Entidades.Produto;
-import Entidades.ProdutoFachada;
+import ejb.Produto;
+import ejb.ProdutoFachada;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -30,19 +30,4 @@ public class ProdutoMBean {
         return produtoFachada.getListaProdutos();
     }
     
-    private Produto produto = new Produto();  // Guarda os dados do formulário
-
-    public Produto getProduto() {
-        return produto;
-    }
-
-    public void setProduto(Produto produto) {
-        this.produto = produto;
-    }
-
-    public String cadastrarProduto() {          // Chama o método do bean de sessão
-        produtoFachada.cadastrarProduto(produto);
-        produto = new Produto();
-        return "index";
-    }
 }

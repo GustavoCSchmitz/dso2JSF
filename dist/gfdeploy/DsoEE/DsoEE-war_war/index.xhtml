@@ -1,21 +1,27 @@
-<?xml version="1.0" encoding="ISO-8859-1"?>
+<?xml version='1.0' encoding='UTF-8' ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:f="http://xmlns.jcp.org/jsf/core"
-      xmlns:p="http://primefaces.org/ui">
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
-        <title>Tela de Login</title>
+        <title>Facelet Title</title>
     </h:head>
     <h:body>
         <f:view>
+            <center>
             <h:form>
-                <h1><h:outputText value="Lista de Clientes"/></h1>
-                <p>Nome</p>
-                <p><p:inputText title="Nome:" value="#{usuarioMBean.usuario.email}" /></p>
-                <p>Endereço</p>
-                <p><p:inputText label="endereco" value="#{usuarioMBean.usuario.senha}" /></p>
+                <h:panelGrid>
+                <p>Email</p>
+                <p><p:inputText title="Email:" value="#{usuarioMBean.usuario.email}" required="true"  /></p>
+                <p>Senha</p>
+                <p><p:password title="Senha:" value="#{usuarioMBean.usuario.senha}" required="true" /></p>
+                </h:panelGrid>
+                <p><p:commandButton value="Login" action="#{usuarioMBean.efetuarLogin(usuario.email, usuario.senha)}" /></p>
+                <br></br>
+                <p><p:commandButton value="Cadastrar-se"  action="#{usuarioMBean.telaCadastro()}" /></p>
             </h:form>
+            </center>
         </f:view>
     </h:body>
 </html>

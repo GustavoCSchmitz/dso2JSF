@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-import Entidades.Usuario;
-import Entidades.UsuarioFachada;
+import ejb.Usuario;
+import ejb.UsuarioFachada;
 import java.util.List;
 import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
@@ -43,19 +43,21 @@ public class UsuarioMBean {
     public String cadastrarUsuario() {          // Chama o método do bean de sessão
         usuarioFachada.cadastrarUsuario(usuario);
         usuario = new Usuario();
-        return "index";
+        //System.out.println("UsuarioMBean");
+        return "telaListas";
+        
     }
     
     public String salvarUsuario() {
         usuarioFachada.salvarUsuario(this.usuario);
-        return "index";
+        return "telaListas";
     }
     
     public String removerUsuario(Integer usuarioId) {
         usuarioFachada.removerUsuario(usuarioId);
-        return "index";
+        return "telaListas";
     }
-  
+    
     private String filtroUf = "";
 
     public String getFiltroUf() {
@@ -69,4 +71,26 @@ public class UsuarioMBean {
     public List getListaUsuariosPorUF() {
         return usuarioFachada.getListaUsuariosPorUF(filtroUf);
     }
+    
+    public String telaCadastro(){
+        return "cadastroUsuario";
+    }
+    
+    public String efetuarLogin(String email, String senha){
+        usuarioFachada.efetuarLogin(email, senha);
+        return "telaListas";
+    }
+    
+    public String telaEditarUsuario(){
+        return "editarUsuario";
+    }
+    
+    public String telaRemoverUsuario(){
+        return "removerUsuario";
+    }
+    
+    public String telaFiltrarUsuario(){
+        return "filtrarUsuario";
+    }
+
 }
